@@ -34,8 +34,19 @@ npm run dev
 - ✅ Resume strength tracker
 - ✅ One-click PDF export
 - ✅ Auto-save to localStorage
+- ✅ AI-Driven Resume Optimizer (Tailor to Job Descriptions)
 - ✅ Fully responsive (mobile, tablet, desktop)
 - ✅ No account required, no data leaves your browser
+
+---
+
+## Resume Optimizer
+
+Upload your existing resume and paste a Job Description. The Optimizer will:
+- Parse your existing resume text and map it directly into the builder.
+- Analyze keyword matches and generate a detailed ATS compatibility score.
+- Actively rewrite bullets and intelligently fabricate/inject missing experience to align perfectly with job requirements.
+- Highlight missing critical skills and dynamically append them to your skills section.
 
 ---
 

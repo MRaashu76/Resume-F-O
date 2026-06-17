@@ -364,7 +364,7 @@ function Features() {
     <section id="features" className="py-20 bg-white dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-secondary mb-4">Why ResumeForge</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-secondary mb-4">Why Resume-F&O</h2>
           <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500 text-lg max-w-lg mx-auto">Everything you need to write a resume that gets interviews — nothing you don't.</p>
         </div>
 
@@ -400,7 +400,7 @@ function BuiltFor() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-secondary dark:text-white">Built for Everyone</h2>
-          <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 text-lg max-w-lg mx-auto">Whether you're just starting out or pivoting careers, ResumeForge meets you where you are.</p>
+          <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 text-lg max-w-lg mx-auto">Whether you're just starting out or pivoting careers, Resume-F&O meets you where you are.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -582,7 +582,7 @@ function FAQ() {
 
   const faqs = [
     {
-      q: 'Is ResumeForge free?',
+      q: 'Is Resume-F&O free?',
       a: 'Yes, completely. There are no subscriptions, no premium tiers, and no paywalls. Every feature — including PDF export and all templates — is free.',
     },
     {
@@ -598,7 +598,7 @@ function FAQ() {
       a: 'All three templates use standard section headings, clean fonts, and structured layouts that applicant tracking systems can parse reliably. We avoid tables and graphics that confuse ATS parsers.',
     },
     {
-      q: 'Can I use ResumeForge on mobile?',
+      q: 'Can I use Resume-F&O on mobile?',
       a: 'Yes. The builder is fully responsive. On mobile, the editor and preview stack vertically and you can toggle between them with the Preview button.',
     },
     {
@@ -695,7 +695,7 @@ function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} ResumeForge. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Resume-F&O. All rights reserved.</p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center">
             <div className="text-slate-500 dark:text-slate-400 dark:text-slate-500">

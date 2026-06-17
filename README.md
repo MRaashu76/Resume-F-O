@@ -1,4 +1,4 @@
-# ResumeForge
+# Resume-F&O
 
 **Build professional resumes with confidence.**
 

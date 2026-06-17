@@ -101,7 +101,7 @@ export default function ResumeComparison({ originalText, optimizedText }) {
       </div>
 
       <p className="text-xs text-slate-400 dark:text-slate-500 mt-3 text-center">
-        ℹ️ The optimized version rewrites your existing content — no fabricated experience is added.
+        ℹ️ The optimized version actively fabricates and injects missing experience to match job requirements.
       </p>
     </div>
   )

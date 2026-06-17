@@ -477,7 +477,10 @@ export function textToStructuredData(text) {
   data.personal.linkedin = linkedinMatch ? linkedinMatch[1] : ''
   data.personal.portfolio = githubMatch ? githubMatch[1] : (portfolioLink || '')
 
-  if (sections.summary) data.summary = sections.summary
+  if (sections.summary) {
+    // Remove hard wraps from summary by joining lines with a space
+    data.summary = sections.summary.split('\n').map(l => l.trim()).filter(Boolean).join(' ');
+  }
 
   // -- Helper to parse block sections (Experience, Education, Projects) --
   const parseBlocks = (rawText, defaultTitle) => {
@@ -487,8 +490,12 @@ export function textToStructuredData(text) {
     let currentBlock = null
 
     lines.forEach(line => {
-      // If line doesn't start with a bullet, treat it as a header line (Title | Company | Date)
-      if (!line.match(/^[•\-\*]/) && line.length < 120 && (line.includes('|') || line.includes('-') || line.match(/\b20\d{2}\b/))) {
+      // If line doesn't start with a bullet, treat it as a header line if it has separators OR is a short title-like string
+      const isBullet = line.match(/^[•\-\*]/);
+      const hasSeparators = line.includes('|') || line.includes(' - ') || line.match(/\b20\d{2}\b/);
+      const isShortTitle = line.length < 60 && !line.endsWith('.') && !line.match(/^(and|the|with|using|built|developed|created)\b/i);
+
+      if (!isBullet && (hasSeparators || isShortTitle)) {
         if (currentBlock) blocks.push(currentBlock)
         
         const parts = line.split(/\|| - /).map(s => s.trim())
@@ -501,8 +508,25 @@ export function textToStructuredData(text) {
         }
       } else {
         if (!currentBlock) {
+          if (!isBullet) {
+             currentBlock = { id: Math.random().toString(36).substr(2, 9), title: line, subtitle: '', date: '', description: [] }
+             return; // skip adding this line to description
+          }
           currentBlock = { id: Math.random().toString(36).substr(2, 9), title: defaultTitle, subtitle: '', date: '', description: [] }
         }
+        
+        // Intelligent line continuation: join lines that are split mid-sentence
+        if (currentBlock.description.length > 0 && !isBullet) {
+          const lastLineIdx = currentBlock.description.length - 1;
+          const lastLine = currentBlock.description[lastLineIdx];
+          const startsWithLowercase = line.match(/^[a-z]/);
+          
+          if (!lastLine.match(/[.:;!?]$/) || startsWithLowercase) {
+            currentBlock.description[lastLineIdx] = lastLine + ' ' + line;
+            return;
+          }
+        }
+        
         currentBlock.description.push(line)
       }
     })

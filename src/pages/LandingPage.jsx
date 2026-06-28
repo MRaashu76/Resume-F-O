@@ -702,16 +702,6 @@ function Footer() {
               Created by: <span className="text-slate-300">Aashish Kr. Das</span> ·{' '}
               <a href="mailto:aashishkumards123@gmail.com" className="text-slate-300 hover:text-white transition-colors">aashishkumards123@gmail.com</a>
             </div>
-
-            <a
-              href="https://digitalheroesco.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary/20 hover:bg-primary/30 border border-primary/30 text-primary px-4 py-2 rounded-xl text-xs font-semibold transition-all hover:scale-105"
-            >
-              <Globe size={12} />
-              Built for Digital Heroes
-            </a>
           </div>
         </div>
       </div>
